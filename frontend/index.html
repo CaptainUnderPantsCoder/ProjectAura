@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7f6f2" />
+  <meta name="description" content="Aura, une expérience interactive pour comprendre comment la data science reconnaît les chiffres manuscrits." />
+  <title>Aura — Quand les données apprennent à lire</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <svg aria-hidden="true" class="icon-defs" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 15 7-7 7 7"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5m6 6-6-6 6-6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m9 6 10 6-10 6z"/></symbol>
+    <symbol id="i-pencil" viewBox="0 0 24 24"><path d="m15 5 4 4M4 20l4-.8L19.3 7.9a2 2 0 0 0-2.8-2.8L5.2 16.4z"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3m3 0-1 13H7L6 7m4 4v6m4-6v6"/></symbol>
+    <symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5M4 9h10a6 6 0 0 1 0 12h-2"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6m0 4h.01"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 7h16M7 4v6M4 17h16m-5-3v6"/></symbol>
+    <symbol id="i-reload" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5M5.5 9A8 8 0 0 1 19 7l1 5M4 12l1 5a8 8 0 0 0 13.5-2"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M4 18v3h16v-3"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M12 5h7v7m0-7L9 15M19 15v4H5V5h7"/></symbol>
+  </svg>
+
+  <div class="announcement"><span class="announcement-dot"></span> PROJECT AURA <span class="announcement-separator">/</span> UNE EXPÉRIENCE DE DATA SCIENCE <span class="announcement-star">✦</span> </div>
+  <header class="site-header" id="top">
+    <nav class="nav-shell container" aria-label="Navigation principale">
+      <a class="brand" href="#top" aria-label="Aura, retour à l’accueil">
+        <span class="brand-icon"><span></span><span></span><span></span><span></span></span>
+        <span>aura<span class="brand-dot">.</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#concept">Le concept</a>
+        <a href="#laboratoire">Laboratoire</a>
+        <a href="#comprendre">Comprendre</a>
+        <a href="#applications">Applications</a>
+      </div>
+      <div class="nav-actions">
+        <a class="nav-cta" href="#laboratoire">Essayer Aura <svg class="icon"><use href="#i-arrow"/></svg></a>
+        <button class="mobile-menu" id="menuButton" type="button" aria-label="Ouvrir le menu" aria-controls="navLinks" aria-expanded="false"><svg class="icon"><use href="#i-menu"/></svg></button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section" aria-labelledby="hero-title">
+      <div class="hero-noise"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow"><span class="eyebrow-mark">✳</span> L'INTELLIGENCE ARTIFICIELLE, AUTREMENT</span>
+          <h1 id="hero-title">Et si les données apprenaient à <span class="highlight-word">lire<span class="underline-swash"></span></span> ?</h1>
+          <p class="hero-lead">Un simple chiffre. Des centaines de pixels. Une prédiction. Découvrez comment une machine peut reconnaître votre écriture, sans magie — juste grâce à la data science.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#laboratoire">Tester l’expérience <svg class="icon"><use href="#i-arrow"/></svg></a>
+            <a class="button button-text" href="#concept"><svg class="icon"><use href="#i-play"/></svg> Explorer le concept</a>
+          </div>
+          <div class="hero-footnote"><span class="avatar-stack"><span>01</span><span>02</span><span>03</span></span><p>Une expérience interactive et accessible à tous.</p></div>
+        </div>
+        <div class="hero-art reveal" aria-label="Illustration d’un chiffre manuscrit transformé en données numériques et en prédiction">
+          <div class="hero-art-halo"></div>
+          <div class="art-floating art-tag art-tag-top"><span class="little-sun">✳</span> Apprentissage automatique</div>
+          <div class="hero-device">
+            <div class="device-top"><span class="device-dots"><i></i><i></i><i></i></span><span>LE LABORATOIRE AURA</span><span class="top-icon">✦</span></div>
+            <div class="device-stage">
+              <div class="stage-crosshair crosshair-1">+</div><div class="stage-crosshair crosshair-2">+</div><div class="stage-crosshair crosshair-3">+</div>
+              <svg viewBox="0 0 270 290" class="handwritten-five" aria-hidden="true"><path d="M181 55H97L83 137q27-20 64-12c71 16 61 110-18 117-34 3-59-12-73-29" /></svg>
+              <div class="canvas-corner">ENTRÉE / 01</div>
+              <div class="tiny-corner">TRACE MANUSCRITE</div>
+            </div>
+            <div class="device-bottom"><span><span class="pulse-dot"></span> Image acquise</span><span>28 × 28 px <svg class="icon"><use href="#i-arrow"/></svg></span></div>
+          </div>
+          <div class="art-floating mini-result"><span class="mini-result-label">PRÉDICTION</span><strong>5</strong><span class="mini-result-sub"><span class="mini-result-ok">●</span> Chiffre reconnu</span></div>
+          <div class="art-floating pixel-card"><span>PIXELS → DONNÉES</span><div class="pixel-decoration" aria-hidden="true"></div><small>784 valeurs</small></div>
+          <div class="art-star star-a">✳</div><div class="art-star star-b">✦</div>
+        </div>
+      </div>
+      <div class="container hero-metrics reveal" aria-label="Caractéristiques de l’expérience">
+        <div><strong>28 × 28</strong><span>pixels par image</span></div>
+        <i></i>
+        <div><strong>784</strong><span>valeurs numériques</span></div>
+        <i></i>
+        <div><strong>10</strong><span>chiffres possibles, de 0 à 9</span></div>
+        <i></i>
+        <div><strong>1</strong><span>prédiction à la fin</span></div>
+      </div>
+    </section>
+
+    <section class="concept-section section-pad" id="concept" aria-labelledby="concept-title">
+      <div class="container">
+        <div class="section-header reveal"><div><div class="section-tag">01 / L’IDÉE DERRIÈRE AURA</div><h2 id="concept-title">Un dessin pour vous.<br/><span>Des données pour l’ordinateur.</span></h2></div><p>Ce que nous reconnaissons en un clin d’œil devient, pour une machine, une succession d’étapes étonnantes.</p></div>
+        <div class="steps-grid">
+          <article class="step-card reveal"><div class="step-top"><span>01</span><svg class="icon"><use href="#i-pencil"/></svg></div><div class="step-visual visual-draw"><svg viewBox="0 0 130 130"><path d="M81 27H49L41 65q22-15 40-4c29 19 12 52-17 50-14-1-23-6-30-15"/></svg></div><h3>Vous dessinez</h3><p>Un chiffre manuscrit, à votre façon. Chacun a sa propre écriture.</p></article>
+          <article class="step-card reveal"><div class="step-top"><span>02</span><span class="step-arrow">↗</span></div><div class="step-visual visual-pixels"><div class="pixel-glyph" aria-hidden="true"><span>▪ ▪ ▪ ▪</span><span>▪ ▫ ▫ ▪</span><span>▫ ▫ ▪ ▪</span><span>▪ ▪ ▫ ▪</span></div></div><h3>La machine analyse</h3><p>L’image devient une grille de 784 intensités de pixels, transformées en nombres.</p></article>
+          <article class="step-card reveal"><div class="step-top"><span>03</span><svg class="icon"><use href="#i-spark"/></svg></div><div class="step-visual visual-result"><span>5</span><span class="result-sun">✳</span></div><h3>L’IA propose une réponse</h3><p>Le modèle recherche des régularités apprises pour identifier le chiffre le plus probable.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="lab-section section-pad" id="laboratoire" aria-labelledby="lab-title">
+      <div class="lab-ambient lab-ambient-1"></div><div class="lab-ambient lab-ambient-2"></div>
+      <div class="container lab-container">
+        <div class="lab-heading reveal">
+          <div><span class="section-tag section-tag-light">02 / LE LABORATOIRE INTERACTIF</span><h2 id="lab-title">À vous de jouer<span class="period">.</span></h2><p>Dessinez un chiffre de 0 à 9. Aura envoie les pixels au modèle pour tenter de deviner ce que vous avez écrit.</p></div>
+          <div class="connection-wrap"><button type="button" class="connection-badge checking" id="connectionBadge" title="Cliquer pour vérifier le serveur"><span class="connection-dot"></span><span id="connectionText">Vérification de l’API…</span><svg class="icon"><use href="#i-reload"/></svg></button><button type="button" class="gear-button" id="settingsButton" aria-label="Configurer l’API" title="Configurer l’API"><svg class="icon"><use href="#i-settings"/></svg></button></div>
+        </div>
+
+        <div class="lab-grid">
+          <div class="draw-panel reveal">
+            <div class="panel-heading"><div><span class="panel-kicker">01 — VOTRE ENTRÉE</span><h3>Votre toile</h3></div><span class="panel-pill"><span></span> DESSIN LIBRE</span></div>
+            <div class="canvas-wrap" id="canvasWrap"><canvas id="drawingCanvas" width="560" height="560" aria-label="Zone de dessin : tracez un chiffre de zéro à neuf" role="img"></canvas><div class="canvas-hint" id="canvasHint"><span class="hint-doodle">✎</span><strong>Dessinez un chiffre ici</strong><small>Souris, trackpad ou écran tactile</small></div><div class="canvas-corner-label">AURA / INPUT</div><div class="canvas-grid-overlay" aria-hidden="true"></div></div>
+            <div class="draw-tools"><label for="brushSize">Épaisseur du trait <span id="brushSizeLabel">Moyen</span></label><input type="range" id="brushSize" min="28" max="70" step="7" value="49" aria-label="Épaisseur du pinceau" /><div class="brush-preview" id="brushPreview" aria-hidden="true"></div></div>
+            <div class="draw-buttons"><button id="clearButton" class="button button-ghost" type="button"><svg class="icon"><use href="#i-trash"/></svg> Effacer</button><button id="undoButton" class="button button-ghost icon-button" type="button" aria-label="Annuler le dernier trait" title="Annuler le dernier trait (Ctrl+Z)" disabled><svg class="icon"><use href="#i-undo"/></svg></button><button id="predictButton" class="button button-accent" type="button"><span id="predictButtonText">Reconnaître</span><svg class="icon" id="predictIcon"><use href="#i-arrow"/></svg><span class="button-spinner" id="predictSpinner" hidden></span></button></div>
+            <div class="shortcut-row"><span>Besoin d’une idée ?</span><div class="example-chips"><button type="button" data-example="2">Essayer un 2</button><button type="button" data-example="4">Un 4</button><button type="button" data-example="7">Un 7</button></div></div>
+          </div>
+
+          <div class="lab-right">
+            <section class="prediction-panel reveal" aria-labelledby="predictionHeading"><div class="panel-heading"><div><span class="panel-kicker">02 — SA RÉPONSE</span><h3 id="predictionHeading">Le verdict de l’IA</h3></div><svg class="icon panel-spark"><use href="#i-spark"/></svg></div>
+              <div class="prediction-empty" id="predictionEmpty"><div class="empty-orbit"><span>?</span><i></i><i></i></div><strong>À vous de commencer</strong><p>Tracez un chiffre sur la toile, puis cliquez sur « Reconnaître » pour voir la prédiction.</p></div>
+              <div class="prediction-content" id="predictionContent" hidden><div class="prediction-main"><div><span class="prediction-field-title">CHIFFRE PROPOSÉ</span><div class="prediction-number" id="predictedDigit">–</div></div><div class="confidence-circle" id="confidenceCircle" role="img" aria-label="Score du modèle"><div><strong id="confidenceValue">–</strong><span>score</span></div></div></div><div class="result-status" id="resultStatus"><svg class="icon"><use href="#i-check"/></svg><span id="resultStatusText">Analyse terminée</span></div><p class="result-explainer" id="resultExplainer"></p><div class="threshold-indicator"><span>Seuil d’acceptation du backend</span><strong>70 %</strong></div><div class="threshold-track"><div class="threshold-marker"></div><div id="confidenceFill"></div></div><small class="threshold-note">Le score du modèle n’est pas une garantie de justesse.</small></div>
+              <div class="prediction-message" role="status" aria-live="polite" id="predictionMessage"></div>
+            </section>
+            <section class="history-panel reveal" aria-labelledby="historyHeading"><div class="history-heading"><div><span class="panel-kicker">VOTRE SESSION</span><h3 id="historyHeading">Derniers essais</h3></div><span class="history-count" id="historyCount">0 essai</span></div><div class="history-empty" id="historyEmpty">Vos analyses apparaîtront ici.</div><div class="history-list" id="historyList"></div><div class="history-note"><svg class="icon"><use href="#i-spark"/></svg> Les essais restent dans cette page, sans sauvegarde.</div></section>
+          </div>
+        </div>
+        <div class="lab-bottom-note"><svg class="icon"><use href="#i-alert"/></svg><p>Cette démonstration utilise le véritable backend ProjectAura. Si l’API est hors ligne, le dessin et la visualisation fonctionnent, mais aucune prédiction ne peut être calculée.</p></div>
+      </div>
+    </section>
+
+    <section class="data-section section-pad" id="comprendre" aria-labelledby="data-title">
+      <div class="container">
+        <div class="section-header reveal"><div><span class="section-tag">03 / SOUS LE CAPOT</span><h2 id="data-title">Ce que l’ordinateur <span>voit vraiment.</span></h2></div><p>Pour nous, c’est un dessin. Pour le modèle, c’est une grille de nombres. Explorez les données exactes de votre tracé.</p></div>
+        <div class="data-lab-grid">
+          <div class="data-viz-card reveal"><div class="data-viz-head"><span class="panel-kicker">VOTRE IMAGE, RECONSTRUITE</span><span class="dot-tag"><span></span> APERÇU EN DIRECT</span></div><div class="data-visual-wrapper"><div class="pixel-preview-shell"><canvas id="pixelCanvas" width="280" height="280" aria-label="Aperçu agrandi des 784 pixels envoyés au modèle"></canvas></div><div class="data-caption"><strong>28 × 28 pixels</strong><span>Du noir au blanc, chaque case a une intensité entre 0 et 255.</span></div></div><div class="pixel-readout"><span>Survolez un pixel</span><div><span>VALEUR</span><strong id="pixelValue">0</strong></div><div><span>BINAIRE</span><strong id="pixelBinary">00000000</strong></div></div><p class="data-tip">La grille se met à jour à partir de votre dessin, même sans connexion au serveur.</p></div>
+          <div class="data-explain-card reveal"><span class="section-tag">DE L'IMAGE AU NOMBRE</span><h3>La machine ne voit pas un « 5 ». Elle voit <em>des valeurs.</em></h3><p>Un écran affiche une image, mais un programme peut la lire comme un tableau. Aura réduit votre dessin à <strong>784 intensités de pixels</strong>. Ce sont ces nombres qui sont envoyés au backend.</p><div class="transform-strip"><div class="transform-number"><strong>5</strong><span>SYMBOLE</span></div><svg class="icon"><use href="#i-arrow"/></svg><div class="transform-matrix"><span>0&nbsp; 0&nbsp; 24&nbsp; 196</span><span>0&nbsp; 74&nbsp; 255&nbsp; 188</span><span>… &nbsp; …&nbsp; …&nbsp; …</span></div><svg class="icon"><use href="#i-arrow"/></svg><div class="transform-binary"><strong>01011010</strong><strong>11100101</strong><span>REPRÉSENTATION BINAIRE</span></div></div><div class="data-fact"><svg class="icon"><use href="#i-spark"/></svg><p><strong>Et les 0 et les 1 ?</strong> En profondeur, les ordinateurs stockent et traitent l’information sous forme de bits. Les intensités de pixels que nous affichons en décimal peuvent aussi être représentées en binaire. Notre API, elle, reçoit directement des nombres entre 0 et 255.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="learning-section section-pad" aria-labelledby="learn-title"><div class="container"><div class="learning-heading reveal"><div><span class="section-tag">04 / LA DATA SCIENCE EN 4 ÉTAPES</span><h2 id="learn-title">Alors, comment <span>apprend-elle</span> ?</h2></div><p>Le principe derrière la reconnaissance de chiffres est celui du machine learning : apprendre à partir d’exemples plutôt que décrire chaque situation à la main.</p></div><div class="learning-track">
+      <article class="learning-item reveal"><div class="learning-number">01</div><div class="learning-symbol">◫</div><h3>Collecter</h3><p>Rassembler des images de chiffres manuscrits, avec leurs bonnes réponses.</p></article>
+      <article class="learning-item reveal"><div class="learning-number">02</div><div class="learning-symbol">▦</div><h3>Préparer</h3><p>Convertir les images en données cohérentes : taille, intensités, format.</p></article>
+      <article class="learning-item reveal"><div class="learning-number">03</div><div class="learning-symbol">✳</div><h3>Apprendre</h3><p>Un modèle repère des régularités sur des exemples déjà étiquetés.</p></article>
+      <article class="learning-item reveal"><div class="learning-number">04</div><div class="learning-symbol">✓</div><h3>Évaluer</h3><p>Mesurer les erreurs, vérifier les prédictions et comprendre les limites.</p></article>
+    </div><div class="learning-note reveal">À noter : le backend fourni charge un modèle déjà entraîné. Son code d’entraînement et ses métriques d’évaluation ne sont pas inclus dans cette interface.</div></div></section>
+
+    <section class="applications-section section-pad" id="applications" aria-labelledby="apps-title"><div class="container"><div class="applications-top reveal"><span class="section-tag section-tag-light">05 / AU-DELÀ DU PROTOTYPE</span><h2 id="apps-title">Ce n’est pas juste<br/><em>un chiffre sur un écran.</em></h2><p>La même logique de reconnaissance de motifs peut inspirer des solutions concrètes. Aura en est une démonstration pédagogique, pas un produit de traitement de documents complet.</p></div><div class="application-cards"><article class="application-card reveal"><div class="application-icon">✉</div><span>01 / SERVICES POSTAUX</span><h3>Lire des codes postaux</h3><p>Reconnaître des chiffres manuscrits dans des adresses, avec des systèmes plus complets.</p></article><article class="application-card reveal"><div class="application-icon">▤</div><span>02 / DOCUMENTS</span><h3>Numériser des formulaires</h3><p>Faciliter la saisie de données chiffrées présentes sur des documents papier.</p></article><article class="application-card reveal"><div class="application-icon">⌁</div><span>03 / AUTOMATISATION</span><h3>Accélérer les tâches répétitives</h3><p>Assister l’analyse d’informations visuelles tout en gardant une vérification humaine.</p></article></div></div></section>
+
+    <section class="cta-section"><div class="container cta-inner reveal"><div><span class="section-tag">LA THÉORIE, C'EST BIEN. ESSAYER, C'EST MIEUX.</span><h2>Votre prochain chiffre<br/>attend d’être reconnu.</h2></div><a class="button button-primary" href="#laboratoire">Retourner au laboratoire <svg class="icon"><use href="#i-arrow"/></svg></a></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-main"><div class="footer-brand"><a class="brand" href="#top"><span class="brand-icon"><span></span><span></span><span></span><span></span></span><span>aura<span class="brand-dot">.</span></span></a><p>Une autre manière de comprendre l’intelligence artificielle. Un chiffre à la fois.</p></div><div class="footer-links"><a href="#concept">Le concept</a><a href="#laboratoire">Laboratoire</a><a href="#comprendre">Comprendre</a><a href="#applications">Applications</a></div></div><div class="container footer-bottom"><span>Projet étudiant • Science des données • 2026</span><span>Inspiré de ProjectAura · Fait pour apprendre <span aria-hidden="true">✳</span></span></div></footer>
+
+  <dialog id="settingsDialog" class="settings-dialog" aria-labelledby="settingsTitle"><form method="dialog" id="settingsForm"><div class="settings-heading"><div><span class="panel-kicker">CONFIGURATION</span><h2 id="settingsTitle">Connexion au backend</h2></div><button type="button" id="closeSettings" class="dialog-close" aria-label="Fermer"><svg class="icon"><use href="#i-close"/></svg></button></div><p>Par défaut, Aura communique avec FastAPI sur votre PC. Si votre serveur utilise une autre adresse, indiquez son URL de base.</p><label for="apiBaseInput">URL du serveur FastAPI</label><input type="url" id="apiBaseInput" value="http://127.0.0.1:8000" spellcheck="false" placeholder="http://127.0.0.1:8000" required /><small>Exemple : http://127.0.0.1:8000 — ne pas ajouter /predict.</small><div class="dialog-actions"><button type="button" id="resetApiButton" class="button button-ghost">Par défaut</button><button type="submit" class="button button-primary">Enregistrer et tester <svg class="icon"><use href="#i-arrow"/></svg></button></div><div id="settingsStatus" role="status" aria-live="polite"></div></form></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
