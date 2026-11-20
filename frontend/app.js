@@ -17,7 +17,7 @@
   workingCanvas.width = 28;
   workingCanvas.height = 28;
   const wctx = workingCanvas.getContext('2d', { willReadFrequently: true });
-  const DEFAULT_API_BASE = 'http://127.0.0.1:8000';
+  const DEFAULT_API_BASE = window.location.origin;
 
   let apiBase = DEFAULT_API_BASE;
   let strokes = [];
@@ -338,7 +338,7 @@
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 4500);
     try {
-      const response = await fetch(apiBase + '/', { signal: controller.signal, cache: 'no-store' });
+      const response = await fetch(apiBase + '/health', { signal: controller.signal, cache: 'no-store' });
       if (!response.ok) throw new Error('Le serveur ne répond pas correctement.');
       const body = await response.json();
       if (body.status !== 'ok') throw new Error('Réponse API inconnue.');
