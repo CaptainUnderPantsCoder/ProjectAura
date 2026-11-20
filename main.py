@@ -5,6 +5,7 @@ import numpy as np
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from fastapi.staticfiles import StaticFiles
 
 
 # ------------------------------------------------------------
@@ -71,7 +72,7 @@ class PredictionRequest(BaseModel):
 # ------------------------------------------------------------
 # Vérifier que le backend fonctionne
 # ------------------------------------------------------------
-@app.get("/")
+@app.get("/health")
 def home():
     return {
         "status": "ok",
@@ -169,3 +170,11 @@ def predict(request: PredictionRequest):
         "digit": digit,
         "confidence": round(confidence, 4)
     }
+
+
+# Afficher le frontend sur le site
+app.mount(
+    "/",
+    StaticFiles(directory=BASE_DIR / "frontend", html=True),
+    name="frontend"
+)
